@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u1c2cxbbos25"
-path="res://.godot/imported/Preview.png-8e872b38ed3374e7a0dc8b8203b83210.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://kkww768yo0mj"
+valid=false
 
 [deps]
 
 source_file="res://assets/kenney_pico-8-city/Preview.png"
-dest_files=["res://.godot/imported/Preview.png-8e872b38ed3374e7a0dc8b8203b83210.ctex"]
 
 [params]
 

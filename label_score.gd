@@ -1,6 +1,6 @@
 extends Label
 
-@onready var score_label = $Player/CanvasLayer/Control/LabelScore
+@onready var score_label = $Hud/Control/TextureRect/LabelScore
 
 
 var score: int = 0

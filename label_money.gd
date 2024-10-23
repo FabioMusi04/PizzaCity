@@ -1,6 +1,6 @@
 extends Label
 
-@onready var money_label = $Player/CanvasLayer/Control/LabelMoney
+@onready var money_label = $Hud/Control/TextureRect/LabelMoney
 
 var money: float = 0
 var bonus_multiplier: float = 1.0
@@ -14,4 +14,4 @@ func update_money(amount: int):
 	
 	
 func update_money_label():
-	money_label.text = str(money) + " $"
+	money_label.text = "Money: " + "%.2f $" % money

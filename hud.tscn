@@ -1,10 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm5jkqdyrbbl8"]
+[gd_scene load_steps=8 format=3 uid="uid://dm5jkqdyrbbl8"]
 
-[ext_resource type="Texture2D" uid="uid://bgvhk68pa6b81" path="res://assets/Ui/Tiles/Large tiles/Thick outline/tile_0057.png" id="1_ibbbm"]
 [ext_resource type="Script" path="res://label_score.gd" id="1_mdg8n"]
 [ext_resource type="Script" path="res://label_money.gd" id="2_jgw2q"]
+[ext_resource type="Script" path="res://label_capacity.gd" id="3_vk4bh"]
+[ext_resource type="Script" path="res://progress_bar_job_security.gd" id="4_hghmk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pruiy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffonl"]
+bg_color = Color(1.51612e-06, 0.515295, 0.313226, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsfp7"]
+bg_color = Color(0.804624, 0.253278, 0.0860713, 1)
 
 [node name="Hud" type="CanvasLayer"]
 
@@ -21,54 +28,93 @@ grow_vertical = 0
 [node name="TextureRect" type="TextureRect" parent="Control"]
 z_index = 1
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 12
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -98.0
-offset_right = 263.0
+offset_top = -111.0
+grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("1_ibbbm")
 
 [node name="LabelScore" type="Label" parent="Control/TextureRect"]
 z_index = 2
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 9
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_right = 208.0
 grow_vertical = 2
-text = "Score 0:"
+text = "Score: 0
+"
 label_settings = SubResource("LabelSettings_pruiy")
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 script = ExtResource("1_mdg8n")
 
-[node name="TextureRect2" type="TextureRect" parent="Control"]
-z_index = 1
+[node name="LabelMoney" type="Label" parent="Control/TextureRect"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -131.5
-offset_top = -98.0
-offset_right = 131.5
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("1_ibbbm")
-
-[node name="LabelMoney" type="Label" parent="Control/TextureRect2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_left = -327.0
+offset_right = -33.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "0 $
+text = "Money: $0
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 script = ExtResource("2_jgw2q")
+
+[node name="LabelCapacity" type="Label" parent="Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 214.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Capacity: 6/6
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("3_vk4bh")
+
+[node name="LabelJobSecurity" type="Label" parent="Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -348.0
+offset_right = -192.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Job Security:"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="ProgressBarJobSecurity" type="ProgressBar" parent="Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -183.0
+offset_top = 43.0
+offset_right = -17.0
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ffonl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fsfp7")
+value = 10.0
+fill_mode = 1
+show_percentage = false
+script = ExtResource("4_hghmk")
