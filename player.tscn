@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://deelvt2jub04i"]
+[gd_scene load_steps=5 format=3 uid="uid://deelvt2jub04i"]
 
 [ext_resource type="Texture2D" uid="uid://sgbap6awjv1x" path="res://assets/TopDown Vehicles v1.17/CIVIC TOPDOWN/Blue/Blue_CIVIC_CLEAN_8D_000-sheet.png" id="1_7ogwt"]
-[ext_resource type="Script" path="res://CarMovement.gd" id="1_i5gfm"]
+[ext_resource type="Script" path="res://car_movement.gd" id="1_i5gfm"]
+[ext_resource type="PackedScene" uid="uid://dm5jkqdyrbbl8" path="res://hud.tscn" id="3_40688"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5x0c"]
 size = Vector2(58, 40)
@@ -17,3 +18,7 @@ shape = SubResource("RectangleShape2D_y5x0c")
 texture = ExtResource("1_7ogwt")
 hframes = 3
 vframes = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Hud" parent="." instance=ExtResource("3_40688")]

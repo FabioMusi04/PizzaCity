@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm5jkqdyrbbl8"]
+
+[ext_resource type="Texture2D" uid="uid://bgvhk68pa6b81" path="res://assets/Ui/Tiles/Large tiles/Thick outline/tile_0057.png" id="1_ibbbm"]
+[ext_resource type="Script" path="res://label_score.gd" id="1_mdg8n"]
+[ext_resource type="Script" path="res://label_money.gd" id="2_jgw2q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pruiy"]
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -98.0
+offset_right = 263.0
+grow_vertical = 0
+texture = ExtResource("1_ibbbm")
+
+[node name="LabelScore" type="Label" parent="Control/TextureRect"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score 0:"
+label_settings = SubResource("LabelSettings_pruiy")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("1_mdg8n")
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -131.5
+offset_top = -98.0
+offset_right = 131.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_ibbbm")
+
+[node name="LabelMoney" type="Label" parent="Control/TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 $
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("2_jgw2q")
